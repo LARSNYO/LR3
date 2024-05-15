@@ -138,7 +138,7 @@ public:
 		return is;
 	}
 
-	//Запись в файл
+	//Сохранение в файл
 	void saveToFile(const std::string& filename) const {
 		std::ofstream file(filename);
 		if (file.is_open()) {

@@ -75,7 +75,7 @@ public:
 		std::cout << "Number of Fraction objects created: " << operationsCount << std::endl;
 	}
 
-	//////////////////////////////////////////____________LR2________________________//////////////////////////////////
+	//LR2
 
 	FractionNumber operator+(const FractionNumber& otherFraction) const {
 		int resultNum = *numerator * (*otherFraction.denominator) + (*otherFraction.numerator) * *denominator;
@@ -120,15 +120,15 @@ public:
 		return *this;
 	}
 
-	//////////////////////////////////////////____________LR3________________________//////////////////////////////////
+	//LR 3
 	// 
-	//________________Перегрузка оператора вывыда____________________///////
+	//Перегрузка оператора вывода
 
 	friend std::ostream& operator<< (std::ostream& os, const FractionNumber& otherFraction) {
 		os << *otherFraction.numerator << "/" << *otherFraction.denominator << std::endl;
 		return os;
 	}
-	//________________Перегрузка оператора ввода____________________///////
+	//Перегрузка оператора ввода
 	friend std::istream& operator>> (std::istream& is, FractionNumber& otherFraction) {
 		int num, denom;
 		char slash;
@@ -137,7 +137,8 @@ public:
 		FractionNumber::operationsCount++;
 		return is;
 	}
-	//////////////_____________Методы для записи и чтения из файлов_________//////////
+
+	//Запись в файл
 	void saveToFile(const std::string& filename) const {
 		std::ofstream file(filename);
 		if (file.is_open()) {
@@ -149,6 +150,7 @@ public:
 		}
 	}
 
+	//Чтение из файла
 	void loadFromFile(const std::string& filename) {
 		std::ifstream file(filename);
 		if (file.is_open()) {
